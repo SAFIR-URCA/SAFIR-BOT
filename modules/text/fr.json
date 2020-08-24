@@ -1,0 +1,461 @@
+{
+    "mail" : {
+        "verify_code" : {
+            "subject" : "Code de validation - Serveur Discord SAFIR",
+            "intro" : "Copier la ligne ci-dessous et coller là dans un des channels du bot pour finaliser votre inscription :"
+        }
+    },
+    "welcome" : {
+        "inexistant_unverified_user" : "Bienvenue sur le serveur **{nom}** qui regroupe les étudiants des formations informatiques de l'URCA. Vous pouvez utiliser la commande **{prefixe}help** pour voir les commandes que vous pouvez utiliser. Pour profiter pleinement du Discord, vous devrez vous enregistrer avec la commande **{prefixe}register** puis vérifier votre compte avec la commande **{prefixe}verify**.",
+        "verified_user" : "Rebienvenue sur le serveur **{nom}** qui regroupe les étudiants des formations informatiques de l'URCA. Vous pouvez utiliser la commande **{prefixe}help** pour voir les commandes que vous pouvez utiliser. Puisque vous vous êtes déjà inscrit et vérifié avant d'avoir quitté le serveur, vos informations ont été conservées et votre rôle **\"Etudiant\"** ou **\"Professeur\"** vous a été remis."
+    },
+    "commands" : {
+
+        "annonce" : {
+            "add" : "Une annonce a été ajoutée !",
+            "author" : "**Auteur : **",
+            "summary" : "**Résumé : **"
+        },
+
+        "mail" : {
+            "is_verified" : "Confirmez-vous le changement d'adresse mail pour {mail} ? Vous perdrez tout ce qui été relié à votre compte dont votre rôle et votre CV",
+            "not_verified" : "Confirmez-vous le changement d'adresse mail pour {mail} ? Un nouveau code sera généré et celui pour l'ancienne adresse mail sera inutilisable",
+            "canceled" : "Vous avez annulé le changement d'adresse mail"        
+        },
+
+        "cv" : {
+            "add_valid" : "Votre CV a bien été enregistré sur notre serveur",
+            "delete_valid" : "Votre CV a bien été supprimé de notre serveur",
+            "modify_valid" : "Votre CV a bien été modifié sur notre serveur",
+            "get_cv" : "Voici le CV que vous avez demandé"
+        },
+
+        "delete" : {
+            "confirming" : "Confirmez-vous la suppression de votre compte ainsi que de toutes vos données enregistrées sur notre serveur ?",
+            "confirmed" : "Votre compte ainsi que vos données ont bien été supprimés de notre serveur",
+            "canceled" :"Vous avez annulé la suppression de votre compte et de vos données"
+        },
+
+        "help" : {
+            "intro" : {
+                "cmd_help" : "Commande : help",
+                "descrip_help" : "```Voici la liste de toutes les commandes auxquelles vous avez accès selon votre rôle sur le serveur !```",
+                "cmd_admin" : "Commandes administrateurs",
+                "cmd_manager" : "Commandes responsables",
+                "cmd_user" : "Commandes utilisateurs"
+            },
+            "admin" : {
+                "no_command" : "Pas de commandes spécifiques aux administrateurs"
+            },
+            "manager" : {
+                "no_command" : "Pas de commandes spécifiques aux responsables",
+                "announce" : {
+                    "syntax" : "annonce {message}",
+                    "descrip" : "Envoi l'annonce {message} dans le channel Annonce au nom du bot et crée un log dans le channel log" 
+                }
+            },
+            "user" : {
+                "no_command" : "Pas de commandes spécifiques aux utilisateurs",
+                "help" : {
+                    "syntax" : "help",
+                    "descrip" : "Commande qui vous affiche la syntaxe et la description de toutes les commandes que vous pouvez utiliser selon vos droits"
+                },
+                "register" : {
+                    "syntax" : "register {adresse mail}",
+                    "descrip" : "Permet de s'enregistrer avec son adresse mail de l'URCA et d'obtenir le rôle qui nous convient entre \"Professeur\" et \"Etudiant\""
+                },
+                "resend" : {
+                    "syntax" : "resend",
+                    "descrip" : "Renvoie le mail contenant le code pour valider l'adresse mail indiquée lors de l'enregistrement"
+                },
+                "verify" : {
+                    "syntax" : "verify {code}",
+                    "descrip" : "Permet de valider l'adresse mail indiquée de l'enregistrement grâce au code reçu par mail."
+                },
+                "mail" : {
+                    "syntax" : "mail {adresse mail}",
+                    "descrip" : "Commande permettant de changer l'adresse mail de l'URCA qui est reliée à votre compte"
+                },
+                "cv" : {
+                    "syntax" : "cv add | modify | delete | @Mention",
+                    "descrip" : "Commande permettant de gérer son CV ou de récupérer celui d'un autre utilisateur\n- Add : Ajoute le CV fournit en fichier joint (sous format PDF) sur notre serveur\n- Modify : Modifie le CV stocké sur notre serveur par celui donné en fichier joint (sous format PDF)\n- Delete : Supprime le CV stocké sur notre serveur\n- @Mention : Récupère le CV de l'utilisateur mentionné"
+                },
+                "menu" : {
+                    "syntax" : "menu",
+                    "descrip" : "Affiche un menu permettant de choisir le thème, à l'aide des réactions, sur lequel on souhaite recevoir des liens d'aides"
+                },
+                "delete" : {
+                    "syntax" : "delete",
+                    "descrip" : "Supprime toutes les données vous concernant sur notre serveur, incluant le CV et le rôle qui vous a été attribué lors de votre enregistrement"
+                }
+            }
+        },
+
+        "menu" : {
+            "intro" : "Menu des commandes",
+            "descrip" : "**Cliquez sur une réaction pour obtenir les liens d'aides correspondant au thème choisi !**",
+            "invitation" :"**Lien d'invitation permanent ! A partager :smile:**",
+            "add_link" : "Un lien à rajouter ?",
+            "contact" : "N'hésitez pas à contacter <@&{contact}> pour rajouter les liens que vous voulez",
+            "theme" : {
+                "urca" : "Aides / liens URCA\n",
+                "html" : "Aides HTML\n",
+                "css" : "Aides CSS\n",
+                "js" : "Aides JavaScript\n",
+                "php" : "Aides PHP\n",
+                "sql" : "Aides MySQL\n",
+                "python" : "Aides Python\n",
+                "java" : "Aides Java\n",
+                "cpp" : "Aides C++\n",
+                "clang" : "Aides C\n"
+            },
+            "link" : {
+
+                "urca" : {
+                    "title" : "Liens utiles URCA",
+                    "list" : {
+                        "licence" : {
+                            "name" : "Site de la licence",
+                            "url" : "https://licenceinfo.fr"
+                        },
+                        "thor" : {
+                            "name" : "THOR (UFR Sciences 2.0)",
+                            "url" : "https://thor.univ-reims.fr"
+                        },
+                        "cyril_rabat" : {
+                            "name" : "Site de Cyril Rabat",
+                            "url" : "https://www.cyril-rabat.fr"
+                        },
+                        "pierre_delisle" : {
+                            "name" : "Site de Pierre Delisle",
+                            "url" : "http://cosy.univ-reims.fr/~pdelisle"
+                        }
+                    }
+                },
+
+                "html" : {
+                    "title" :"Liens utiles HTML",
+                    "list" : {
+                        "base" : {
+                            "name" : "Basiques d'HTML",
+                            "url" : "https://developer.mozilla.org/fr/docs/Web/HTML"
+                        },
+                        "learn" : {
+                            "name" : "Apprendre l'HTML",
+                            "url" : "https://html.com/"
+                        },
+                        "w3school" : {
+                            "name" : "W3School HTML",
+                            "url" : "https://www.w3schools.com/html/default.asp"
+                        },
+                        "cheat_sheets" : {
+                            "name" : "Cheat sheets",
+                            "url" : "https://htmlcheatsheet.com/"
+                        },
+                        "e-book" : {
+                            "name" : "E-book HTML(en anglais)",
+                            "url" : "https://books.goalkicker.com/HTML5Book/HTML5NotesForProfessionals.pdf"
+                        }
+                    }
+                },
+
+                "css" : {
+                    "title" : "Liens utiles CSS",
+                    "list" : {
+                        "w3school" : {
+                            "name" : "W3School CSS",
+                            "url" : "https://www.w3schools.com/css/default.asp"
+                        },
+                        "cheat_sheets" : {
+                            "name" : "Cheat sheets",
+                            "url" : "https://htmlcheatsheet.com/css/"
+                        },
+                        "tools" : {
+                            "name" : "Différents outils",
+                            "url" : "https://www.megaptery.com/2012/05/21-outils-generateurs-css-developpeurs-web.html"
+                        },
+                        "e-book" : {
+                            "name" : "E-book CSS(en anglais)",
+                            "url" : "https://books.goalkicker.com/CSSBook/CSSNotesForProfessionals.pdf"
+                        }
+                    }
+                },
+
+                "js" : {
+                    "title" :"Liens utiles JavaScript",
+                    "list" : {
+                        "try" : {
+                            "name" : "Esssayez JavaScript",
+                            "url" : "https://www.javascript.com/"
+                        },
+                        "cheat_sheets" : {
+                            "name" : "Cheat sheets",
+                            "url" : "https://htmlcheatsheet.com/js/"
+                        },
+                        "megaptery" : {
+                            "name" : "Megaptery",
+                            "url" : "https://www.megaptery.com/categorie/js-jquery"
+                        },
+                        "scriptia" : {
+                            "name" : "JavaScript Scriptia, site de programmation JS",
+                            "url" : "https://scriptia.net/"
+                        },
+                        "w3school" : {
+                            "name" : "W3School JavaScript",
+                            "url" : "https://www.w3schools.com/js/default.asp"
+                        },
+                        "openclassroom" : {
+                            "name" : "OpenClassroom JS",
+                            "url" : "https://openclassrooms.com/fr/courses/1916641-dynamisez-vos-sites-web-avec-javascript"
+                        },
+                        "e-book" : {
+                            "name" : "E-book JavaScript(en anglais)",
+                            "url" : "https://books.goalkicker.com/JavaScriptBook/JavaScriptNotesForProfessionals.pdf"
+                        }
+                    }
+                },
+
+                "php" : {
+                    "title" :"Liens utiles PHP",
+                    "list" : {
+                        "documentation" : {
+                            "name" : "PHP .net",
+                            "url" : "https://www.php.net/"
+                        },
+                        "help" : {
+                            "name" : "PHP Help",
+                            "url" : "https://www.phphelp.com/"
+                        },
+                        "w3school" : {
+                            "name" : "W3School PHP",
+                            "url" : "https://www.w3schools.com/php/default.asp"
+                        },
+                        "e-book" : {
+                            "name" : "E-book PHP(en anglais)",
+                            "url" : "https://books.goalkicker.com/PHPBook/PHPNotesForProfessionals.pdf"
+                        }
+                    }
+                },
+
+                "sql" : {
+                    "title" : "Liens utiles MySQL",
+                    "list" : {
+                        "w3school" : {
+                            "name" : "W3School SQL",
+                            "url" : "https://www.w3schools.com/sql/default.asp"
+                        },
+                        "courses" : {
+                            "name" : "Cours SQL",
+                            "url" : "https://sql.sh/"
+                        },
+                        "live" : {
+                            "name" : "Live SQL",
+                            "url" : "https://livesql.oracle.com/"
+                        },
+                        "e-book_sql" : {
+                            "name" : "E-book SQL(en anglais)",
+                            "url" : "https://books.goalkicker.com/SQLBook/SQLNotesForProfessionals.pdf"
+                        },
+                        "e-book_mysql" : {
+                            "name" : "E-book MySQL(en anglais)",
+                            "url" : "https://books.goalkicker.com/MySQLBook/MySQLNotesForProfessionals.pdf"
+                        }
+                    }
+                },
+
+                "python" : {
+                    "title" :"Liens utiles Python",
+                    "list" : {
+                        "documentation" : {
+                            "name" : "Python Documentation",
+                            "url" : "https://www.python.org/doc/"
+                        },
+                        "e-book" : {
+                            "name" : "E-book Python(en anglais)",
+                            "url" : "https://books.goalkicker.com/PythonBook/PythonNotesForProfessionals.pdf"
+                        },
+                        "w3school" : {
+                            "name" : "W3School Python",
+                            "url" : "https://www.w3schools.com/python/default.asp"
+                        }
+                    }
+                },
+
+                "java" : {
+                    "title" : "Liens utiles Java",
+                    "list" : {
+                        "documentation" : {
+                            "name" : "Java Documentation",
+                            "url" : "https://docs.oracle.com/en/java/index.html"
+                        },
+                        "w3school" : {
+                            "name" : "W3School Java",
+                            "url" : "https://www.w3schools.com/java/default.asp"
+                        },
+                        "e-book" : {
+                            "name" : "E-book Java(en anglais)",
+                            "url" : "https://books.goalkicker.com/JavaBook/JavaNotesForProfessionals.pdf"
+                        }
+                    }
+                },
+
+                "cpp" : {
+                    "title" :"Liens utiles C++",
+                    "list" : {
+                        "w3school" :{
+                            "name" : "W3School C++",
+                            "url" : "https://www.w3schools.com/cpp/default.asp"
+                        },
+                        "e-book" : {
+                            "name" : "E-book C++(en anglais)",
+                            "url" : "https://books.goalkicker.com/CPlusPlusBook/CPlusPlusNotesForProfessionals.pdf"
+                        },
+                        "website" : {
+                            "name" : "C++.com",
+                            "url" : "http://www.cplusplus.com/"
+                        }
+                    }
+                },
+
+                "clang" : {
+                    "title" :"Liens utiles C",
+                    "list" : {
+
+                        "documentation" : {
+                            "name" : "C Documentation",
+                            "url" : "https://en.cppreference.com/w/c"
+                        },
+                        "e-book" : {
+                            "name" : "E-book C(en anglais)",
+                            "url" : "https://books.goalkicker.com/CBook/CNotesForProfessionals.pdf"
+                        }
+
+                    }
+                }
+
+            }
+        },
+
+        "register" : {
+            "confirming_mail" : "Est-ce-bien votre adresse mail de l'URCA ?",
+            "canceled" : "Vous avez annulé l'enregistrement de votre compte",
+            "resend" : "Un mail contenant le code vient de vous être renvoyé",
+            "mail_confirmed" : "Vous avez confirmé votre adresse mail. Vous allez recevoir d'ici quelques minutes un code pour pouvoir finaliser votre inscription",
+            "mail_time" : "Vous ne pouvez pas encore demander le renvoi du code. Vous devez attendre {time} minute(s) depuis le dernier envoi avant de pouvoir le demander",
+            "delete" : "Vous avez annulé l'enregistrement de votre compte. Tout ce qui était enregistré dans la base de données vous concernant a été supprimé"
+        },
+
+        "verify" : {
+            "title_valid" : "Vous avez validé votre adresse mail",
+            "descrip_valid" : "Votre compte Discord est maintenant relié à votre adresse mail et le rôle vous correspondant vous a été attribué sur le serveur"
+        }
+
+    },
+
+    "error" : {
+        "title" : "🚨 ERREUR 🚨",
+        "command" : {
+            "error_type" :  "Je ne reconnais pas cette commande ! 🤯",
+            "descrip" : "Tapes la commande **{prefixe}help** pour voir les commandes valides"
+        },
+        "permission" : {
+            "user" : {
+                "error_type" : "Vous n'avez pas les permissions suffisantes pour utiliser cette commande !",
+                "descrip" : "Tapes la commande **{prefixe}help** pour voir les commandes auxquelles tu as accès"
+            },
+            "bot" : {
+                "error_type" : "Le bot n'a pas l'autorisation de parler dans ce channel"
+            }
+        },
+        "emoji" : {
+            "error_type" : "Aucune commande n'est associée à cet émoji !",
+            "descrip" : "Cliquez sur les émojis déjà présents pour être sûr d'avoir une réponse"
+        },
+
+        "mail" : {
+            "not_mail" : {
+                "error_type" : "Ce que vous avez indiqué n'est pas une adresse mail"
+            },
+            "domain_mail" : {
+                "error_type" : "L'adresse mail que vous avez indiqué n'appartient pas à l'URCA",
+                "descrip" : "Veuillez saisir votre adresse mail sous **\"@etudiant.univ-reims.fr\"** ou **\"@univ-reims.fr\"**"
+            },
+            "name_mail" : {
+                "error_type" : "L'adresse mail que vous avez indiquée ne correspond pas au format utilisé par l'URCA",
+                "descrip" : "Veuillez saisir votre adresse mail sous le format **\"prenom.nom[chiffre]\"** (ce qui se trouve entre \"[]\" est optionnel)"
+            },
+            "own_mail" : {
+                "error_type" : "Vous avez indiqué votre propre adresse mail"
+            },
+            "mail_used" : {
+                "error_type" : "L'adresse mail que vous avez indiqué est déjà utilisée et vérifiée par un autre compte Discord"
+            }
+        },
+
+        "cv" : {
+            "no_cv" : {
+                "error_type" : "Vous n'avez pas enregistré de CV sur ce compte"
+            },
+            "no_pdf" : {
+                "error_type" : "Format PDF requis",
+                "descrip" : "Vous devez fournir votre CV sous format PDF"
+            },
+            "no_file" : {
+                "error_type" : "Fichier manquant",
+                "descrip" : "Vous n'avez pas fourni de CV en fichier joint"
+            },
+            "exist" : {
+                "error_type" : "Vous avez déjà enregistré votre CV sur notre serveur"
+            },
+            "mention_user_inexistant" : {
+                "error_type" : "L'utilisateur que vous avez mentionné ne s'est pas enregistré"
+            },
+            "mention_no_cv" : {
+                "error_type" : "L'utilisateur que vous avez mentionné n'a pas enregistré de CV"
+            }
+        },
+
+        "channel" : {
+            "type" : {
+                "error_type" : "Vous pouvez exécuter cette commande uniquement sur le serveur dans un des channels de la catégorie du bot"
+            },
+            "category" : {
+                "error_type" : "Vous pouvez exécuter cette commande uniquement dans un des channels de la catégorie du bot"
+            }
+        },
+
+        "account" : {
+            "verified" : {
+                "error_type" : "Votre compte Discord est déjà vérifié avec une adresse mail."
+            },
+            "incorrect_code" : {
+                "error_type" : "Code incorrect",
+                "descrip" : "Le code que vous avez saisi est incorrect. Vérifiez le code que vous avez reçu par mail"
+            },
+            "signed_up" : {
+                "error_type" : "Compte déjà enregistré",
+                "descrip" : "Votre compte Discord est déjà enregistré et attend la validation grâce au code reçu par mail"
+            },
+            "no_registered" : {
+                "error_type" : "Compte non enregistré",
+                "descrip" : "Ce compte n'est pas enregistré sur notre serveur"
+            },
+            "in_verifying" : {
+                "error_type" : "En cours de vérification",
+                "descrip" : "Veuillez vérifier votre adresse mail grâce au code que vous avez reçu sur cette dernière"
+            },
+            "in_confirming" : {
+                "error_type" : "En cours de confirmation",
+                "descrip" : "Un message de confirmation a été envoyé pour confirmer votre adresse mail. Répondez à ce message en y réagissant selon les réactions en-dessous"
+            },
+            "in_deleting" : {
+                "error_type" : "En cours de confirmation",
+                "descrip" : "Un message de confirmation a été envoyé concernant la suppression de votre compte. Répondez à ce message en y réagissant selon les réactions en-dessous"
+            },
+            "in_changing_mail" : {
+                "error_type" : "En cours de confirmation",
+                "descrip" : "Un message de confirmation a été envoyé concernant le changement d'adresse mail de votre compte. Répondez à ce message en y réagissant selon les réactions en-dessous"
+            }
+        }
+    }
+}
