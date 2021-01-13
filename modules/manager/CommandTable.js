@@ -7,6 +7,7 @@ const Cv = require('../commands/Cv');
 const Resend = require('../commands/Resend');
 const Delete = require('../commands/Delete');
 const Mail = require('../commands/Mail');
+const Feedback = require('../commands/Feedback');
 
 /* Commandes exécutable dans un des channels de la catégorie du bot sur le serveur */
 const BotChannelCommandTable = new Map( [
@@ -21,10 +22,17 @@ const BotChannelCommandTable = new Map( [
     ["mail", Mail.MailCommand]
 ]);
 
+const BotDmCommandTable = new Map([])
+
+const BotFeedbackCommand = new Map([
+    ["feedback", Feedback.FeedbackCommand]
+])
 const CommandTable = new Map(
     [
-        ["bot_channel", BotChannelCommandTable]
+        ["bot_channel", BotChannelCommandTable],
+        ["dm_channel", BotDmCommandTable],
+        ["feedback_channel", BotFeedbackCommand]
     ]
 );
-    
+
 module.exports = CommandTable;

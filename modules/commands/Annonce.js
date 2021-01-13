@@ -35,7 +35,7 @@ const annonceCommand = async function(message, client) {
         .setAuthor(Text.commands.annonce.add)
         .setColor('BLUE')
         .setDescription(Text.commands.annonce.author + message.author + "\n" + Text.commands.annonce.summary + args);
-        
+
     client.channels.get(Config.ID_CHANNEL_LOG).send(annonce_log)
         .catch(console.error);
 

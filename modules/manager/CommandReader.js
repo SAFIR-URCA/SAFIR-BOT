@@ -44,7 +44,7 @@ class CommandReader {
     static getArgs(message) {
         return message.content.slice(Config.PREFIX.length).trim().split(/ +/g);
     }
-    
+
     /**
     * Get the prefix that the user just used to make the command
     * @param {*} message - The message to extract the command from.
@@ -63,12 +63,12 @@ function launchCommand(message, client) {
     let command = CommandReader.getCommand(message);
 
     let bot_channel_cmd = CommandTable.get("bot_channel");
+    let bot_dm_cmd = CommandTable.get("dm_channel");
+    let feedback_cmd = CommandTable.get("feedback_channel");
 
     if (message.channel.type == "text") {
-
         /* Si le message se trouve dans un des channels de la catégorie du bot */
         if(client.channels.get(message.channel.parentID).id == Config.ID_CATEGORY_BOT) {
-            
             /* Si la commande demandée existe */
             if(bot_channel_cmd.has(command)) {
                 bot_channel_cmd.get(command)(message, client);
@@ -81,6 +81,19 @@ function launchCommand(message, client) {
                     .catch (console.error);
             }
         }
+
+        else if (message.channel.id == Config.ID_CHANNEL_FEEDBACK){
+            if(feedback_cmd.has(command)){
+                feedback_cmd.get(command)(message,client);
+            }
+            else {
+                error = new Discord.RichEmbed(Error.embedError)
+                error.setDescription(error.description + "\n<@" + message.author.id + ">");
+                message.channel.send(error)
+                    .catch (console.error);
+            }
+        }
+
         /* Si le message ne se trouve pas dans la bonne catégorie du serveur */
         else {
             error = new Discord.RichEmbed(Error.embedCategoryErr)
@@ -88,7 +101,18 @@ function launchCommand(message, client) {
             message.channel.send(error)
                 .catch (console.error);
         }
-    } 
+    }
+    else if (message.channel.type == "dm") {
+        if(feedback_cmd.has(command)){
+            feedback_cmd.get(command)(message,client);
+        }
+        else {
+            error = new Discord.RichEmbed(Error.embedError)
+            error.setDescription(error.description + "\n<@" + message.author.id + ">");
+            message.channel.send(error)
+                .catch (console.error);
+        }
+    }
     /* Si le message ne se trouve pas sur le serveur */
     else {
         error = new Discord.RichEmbed(Error.embedChannelTypeErr)

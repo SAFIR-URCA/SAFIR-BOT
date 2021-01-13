@@ -2,13 +2,14 @@
     "VERSION" : "",
     "PREFIX" : "",
     "BOT_TOKEN" : "",
-  
+
     "ID_SERVER" : "",
-  
+
     "ID_CATEGORY_BOT" : "",
     "ID_CHANNEL_ANNONCE" : "",
     "ID_CHANNEL_LOG" : "",
-  
+    "ID_CHANNEL_FEEDBACK" : "",
+
     "ID_LOGO_URCA" : "",
     "ID_LOGO_HTML" : "",
     "ID_LOGO_CSS" : "",
@@ -19,23 +20,23 @@
     "ID_LOGO_JAVA" : "",
     "ID_LOGO_CPP" : "",
     "ID_LOGO_CLANG" : "",
-  
+
     "ID_ROLE_STUDENT" : "",
     "ID_ROLE_TEACHER" : "",
     "ID_ROLE_SAFIR" : "",
-  
+
     "DB_NAME" : "",
     "DB_USERNAME" : "",
     "DB_PASSWORD" : "",
     "DB_HOST" : "",
     "DB_PORT" : -1,
-  
+
     "MAIL_HOST" : "",
     "MAIL_PORT" : -1,
     "MAIL_USER" : "",
     "MAIL_PASS" : "",
     "MAIL_FROM_ADR" : "",
     "MAIL_FROM_NAME" : "",
-    
+
     "TIME_RESEND" : -1
 }
