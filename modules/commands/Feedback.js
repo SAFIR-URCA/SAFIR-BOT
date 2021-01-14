@@ -9,14 +9,13 @@ const feedbackCommand = async function(message, client) {
 
     let args = message.content.split(' ').slice(1).join(" ");
     let attachment = message.attachments.first();
-    console.log(attachment)
 
     /* S'il n'y a pas le texte de l'annonce dans le message */
     if (!args && !attachment) {
         error = new Discord.RichEmbed(Error.embedError)
         error.setDescription(error.description + "\n<@" + message.author.id + ">");
         message.channel.send(error)
-        .catch("test"+console.error);
+        .catch(console.error);
         return;
     }
     if(args){
@@ -30,7 +29,10 @@ const feedbackCommand = async function(message, client) {
         client.channels.get(Config.ID_CHANNEL_FEEDBACK).send({file: attachment.url})
         .catch(console.error);
     }
-    message.delete(100);
+
+    if (message.channel.type != "dm"){
+        message.delete(100);
+    }
     return;
 }
 
